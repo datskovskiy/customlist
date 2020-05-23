@@ -131,6 +131,7 @@ namespace CustomList
         /// <param name="index">The zero-based index at which item should be inserted.</param>
         /// <param name="item">The object to insert.</param>
         /// <exception cref="ArgumentOutOfRangeException">Throw when index is less than 0 or greater than Count - 1</exception>
+        /// <exception cref="ArgumentNullException">Thrown when item is null</exception>
         public void Insert(int index, T item)
         {
             throw new NotImplementedException();
