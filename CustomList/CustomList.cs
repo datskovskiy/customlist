@@ -33,7 +33,7 @@ namespace CustomList
         /// <summary>
         /// Constructor that gets params T as parameter       
         /// </summary>
-        /// <exception cref="NullReferenceException">Thrown when values is null</exception>
+        /// <exception cref="ArgumentNullException">Thrown when values is null</exception>
         /// <param name="values"></param>
         public CustomList(params T[] values)
         {
@@ -44,7 +44,7 @@ namespace CustomList
         /// <summary>
         /// Constructor that gets Ienumerable collection as parameter       
         /// </summary>
-        ///<exception cref="NullReferenceException">Thrown when values is null</exception>
+        ///<exception cref="ArgumentNullException">Thrown when values is null</exception>
         /// <param name="values"></param>
         public CustomList(IEnumerable<T> values)
         {
