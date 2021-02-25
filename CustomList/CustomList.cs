@@ -63,8 +63,9 @@ namespace CustomList
         {
             get
             {
+                var e = new IndexOutOfRangeException("Incorrect value of index.");
                 if (index < 0 || index > Count - 1)
-                    throw new IndexOutOfRangeException("Incorrect value of index.");
+                    throw e;
 
                 var current = Head;
 
@@ -75,8 +76,9 @@ namespace CustomList
             }
             set
             {
+                var e = new IndexOutOfRangeException("Incorrect value of index.");
                 if (index < 0 || index > Count - 1)
-                    throw new IndexOutOfRangeException("Incorrect value of index.");
+                    throw e;
 
                 var current = Head;
 
@@ -217,8 +219,9 @@ namespace CustomList
         /// <exception cref="ArgumentNullException">Thrown when item is null</exception>
         public void Insert(int index, T item)
         {
+            var e = new IndexOutOfRangeException("Incorrect value of index.");
             if (index < 0 || index > Count)
-                throw new IndexOutOfRangeException("Incorrect value of index.");
+                throw e;
 
             if (item is null)
                 throw new ArgumentNullException(nameof(item), "cant be null.");
@@ -250,7 +253,7 @@ namespace CustomList
         public void RemoveAt(int index)
         {
             if (index < 0 || index > Count - 1) 
-                throw new IndexOutOfRangeException("Incorrect value of index.");
+                throw new ArgumentOutOfRangeException(nameof(index),"Incorrect value of index.");
 
             var current = Head;
             Item<T> previous = null;
