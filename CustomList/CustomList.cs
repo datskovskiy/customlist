@@ -219,9 +219,8 @@ namespace CustomList
         /// <exception cref="ArgumentNullException">Thrown when item is null</exception>
         public void Insert(int index, T item)
         {
-            var e = new IndexOutOfRangeException("Incorrect value of index.");
             if (index < 0 || index > Count)
-                throw e;
+                throw new ArgumentOutOfRangeException(nameof(index),"Incorrect value of index.");
 
             if (item is null)
                 throw new ArgumentNullException(nameof(item), "cant be null.");
@@ -317,7 +316,7 @@ namespace CustomList
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable)this).GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
