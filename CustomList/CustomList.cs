@@ -93,18 +93,18 @@ namespace CustomList
         /// <summary>
         ///  Adds an object to the end of the CustomList.
         /// </summary>
-        /// <param name="data">Object that should be added in the CustomList</param>
+        /// <param name="item">Object that should be added in the CustomList</param>
         /// <exception cref="ArgumentNullException">Throws when you try to add null</exception>
-        public void Add(T data)
+        public void Add(T item)
         {
-            if (data is null)
-                throw new ArgumentNullException(nameof(data), "cant be null.");
+            if (item is null)
+                throw new ArgumentNullException(nameof(item), "cant be null.");
 
-            var item = new Item<T>(data);
+            var element = new Item<T>(item);
 
             if (Head == null)
             {
-                Head = item;
+                Head = element;
             }
             else
             {
@@ -112,7 +112,7 @@ namespace CustomList
                 while (current.Next != null)
                     current = current.Next;
 
-                current.Next = item;
+                current.Next = element;
             }
 
             Count++;
