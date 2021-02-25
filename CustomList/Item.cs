@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CustomList
+﻿namespace CustomList
 {
    public class Item<T>
     {
@@ -10,7 +6,7 @@ namespace CustomList
         public Item<T> Next { get; set; }
         public Item(T data)
         {
-            throw new NotImplementedException();
+            Data = data;
         }
 
     }
